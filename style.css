@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+
+/* Root variables for consistent styling across the app */
+:root {
+    --google-font-tenali: 'Tenali Ramakrishna', sans-serif;
+    --pokemon-yellow: #F7DC6F; /* Bright yellow for highlights */
+    --pokemon-blue: #21618C; /* Rich blue for accents */
+    --pokemon-red: #D32F2F; /* Bold red for key elements */
+    --background-light: #FFFFFF; /* White for card backgrounds */
+    --text-dark: #333333; /* Dark grey for text readability */
+    --border-grey: #B0B0B0; /* Neutral grey for borders */
+    --hover-grey: #E8E8E8; /* Light grey for hover effects */
+    --shadow-dark: rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+}
+
+/* Apply consistent box-sizing for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Base styles for the page */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: linear-gradient(180deg, var(--pokemon-red), var(--pokemon-blue)); /* Gradient background */
+    font-family: var(--google-font-tenali);
+    color: var(--text-dark); /* Default text color */
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+    margin: auto;
+    max-width: 90%;
+}
+
+/* Main header styling */
+#main-header {
+    display: flex;
+    justify-content: center;
+    font-size: 80px; /* Large size for impact */
+    text-transform: uppercase;
+    font-family: var(--google-font-tenali), sans-serif;
+    color: #FFD700; /* Pokémon yellow */
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Text depth */
+    font-weight: 900; /* Bold font for emphasis */
+    letter-spacing: 3px; /* Spacing for clarity */
+    text-align: center;
+}
+
+/* Subheader below the main header */
+#header-label {
+    text-align: center;
+    color: #FFFFFF; /* White for contrast */
+    margin: 0 0 40px 0;
+}
+
+/* Grid layout for Pokémon cards */
+#app {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive layout */
+    grid-auto-rows: minmax(300px, auto);
+    gap: 30px; /* Spacing between cards */
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Individual Pokémon card styling */
+.poke-card {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid var(--border-grey); /* Subtle border */
+    padding: 15px;
+    background: var(--background-light); /* White background */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%;
+    height: 100%;
+    color: var(--text-dark); /* Dark text for contrast */
+    transition: 0.2s ease-in-out all; /* Smooth hover effect */
+    box-shadow: 0px 4px 10px var(--shadow-dark); /* Shadow for depth */
+    position: relative;
+}
+
+/* Hover effect for Pokémon cards */
+.poke-card:hover {
+    transform: scale(1.035); /* Slight scale-up */
+    cursor: pointer;
+    background: var(--hover-grey); /* Light grey on hover */
+    box-shadow: 0px 6px 15px var(--shadow-dark); /* Deeper shadow on hover */
+}
+
+/* Styling for Pokémon ID badge */
+.poke-card .card-id {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start; 
+    width: 50px;
+    padding: 5px;
+    border-radius: 8px; /* Rounded badge */
+    background: var(--pokemon-red); /* Bold red background */
+    color: #FFFFFF; /* White text */
+    font-size: 28px; /* Larger font */
+    text-align: center;
+}
+
+/* Flexible row layout for card header */
+.flexy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styling for the HP icon */
+#poke-hp {
+    padding-right: 3px;
+    color: var(--pokemon-red); /* Red heart icon */
+    font-size: 16px;
+}
+
+/* Pokémon name styling */
+.poke-card .card-name {
+    display: flex;
+    justify-content: center;
+    color: var(--pokemon-blue); /* Blue text for names */
+    font-size: 28px; /* Larger font for readability */
+    font-weight: bold;
+}
+
+/* Pokémon image styling */
+.poke-card .card-image {
+    display: block;
+    width: 130px; /* Fixed size */
+    height: 150px;
+    margin: auto;
+}
+
+/* Details about Pokémon type */
+.poke-card .card-details {
+    color: var(--pokemon-blue); /* Blue for type details */
+    font-size: 20px; /* Readable size */
+    text-align: center;
+}
+
+/* General text styling for additional details */
+.poke-card span {
+    color: var(--text-dark); /* Dark grey text */
+    font-size: 1.2rem;
+}
