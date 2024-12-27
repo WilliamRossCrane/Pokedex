@@ -4,8 +4,13 @@
 const container = document.body.querySelector("#app");
 
 const pokemonToFetch = 151;
+const searchBar = document.body.querySelector("#search-bar");
+const searchBtn = document.body.querySelector("#submit-btn");
+const anchorSearch = document.body.querySelector("#searchClick");
+const clearSearch = document.body.querySelector("#clear-search");
+
 const newPokeImg = function (pokeID) {
-    let src = `https://pokeres.bastionbot.org/images/pokemon/${pokeID}.png`;
+    let src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeID}.png`;
     return src;
 };
 const fetchPokemon = () => {
@@ -62,18 +67,14 @@ const displayPokemon = (pokemon) => {
 };
 
 fetchPokemon();
-const searchBar = document.body.querySelector("#search-bar");
-const searchBtn = document.body.querySelector("#submit-btn");
-const anchorSearch = document.body.querySelector("#searchClick");
-const clearSearch = document.body.querySelector("#clear-search");
 const mySearchStuff = () => {
     let inputStr = "";
     searchBar.addEventListener("keyup", (e) => {
         inputStr = e.target.value;
-        console.log(inputStr);
     });
     clearSearch.addEventListener("click", () => {
         searchBar.value = "";
+        anchorSearch.href = "";
     });
     let promiseArr = [];
     for (let i = 1; i <= pokemonToFetch; i++) {
